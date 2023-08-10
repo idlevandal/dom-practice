@@ -1,0 +1,118 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+#form {
+    width: 350px;
+    box-shadow: 3px 3px 14px -2px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+}
+
+input {
+    padding: 4px;
+    border: solid 1px #999;
+    border-radius: 2px;
+}
+
+.name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.newDiv {
+    margin: 20px auto;
+
+    height: 200px;
+    width: 200px;
+    background-color: green;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.6);
+}
+
+.btn-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    background: #5e5df0;
+    border-radius: 999px;
+    box-shadow: #5e5df0 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji",
+        NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",
+        EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto,
+        "Helvetica Neue", "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+}
+
+.loader-container {
+    display: none;
+}
+
+.loader {
+    margin: 30px auto;
+    width: 48px;
+    height: 48px;
+    border: 3px solid #aaa;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+.loader::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-bottom-color: #ff3d00;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

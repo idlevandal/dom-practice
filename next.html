@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Info</title>
+</head>
+<body>
+    <div>
+        <a href="index.html">Back Jack...</a>
+        <h2>Data from previous page</h2>
+        <div>First name:<br><span id="first-name"></span></div>
+        <div>Last name:<br><span id="last-name"></span></div>
+    </div>
+
+    <script>
+        // const firstName = localStorage.getItem('first-name');
+        // const lastName = localStorage.getItem('last-name');
+        const user = JSON.parse(localStorage.getItem('user'));
+        const firstName = user.firstName;
+        const lastName = user.lastName;
+
+        document.getElementById('first-name').textContent = firstName;
+        document.getElementById('last-name').textContent = lastName;
+    </script>
+</body>
+</html>
