@@ -10,14 +10,24 @@ const firstName = document.getElementById('first-name');
 const lastName = document.getElementById('last-name');
 const form = document.getElementById('form');
 
-function getUsers() {
+// // PROMISE VERSION
+// function getUsers() {
+//     showSpinner(true);
+//     fetch('https://jsonplaceholder.typicode.com/users')
+//       .then(response => response.json())
+//       .then(json => {
+//         showSpinner(false);
+//         json.forEach(el => addDiv(el.name));
+//       });
+// }
+
+// // ASYNC VERSION
+async function getUsers() {
     showSpinner(true);
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-      .then(json => {
-        showSpinner(false);
-        json.forEach(el => addDiv(el.name));
-      });
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    const json = await response.json();
+    showSpinner(false);
+    json.forEach(el => addDiv(el.name));
 }
 // JSON Placerholer endpoints.
 //   /posts	100 posts
